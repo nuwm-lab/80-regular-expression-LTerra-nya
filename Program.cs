@@ -17,5 +17,8 @@ class MainClass
                 Console.WriteLine(match); // Output: dd/mm/yyyy or dd-mm-yyyy
             }
         }
+        else{
+            Console.WriteLine("No matches found.");
+        }
     }
 }
