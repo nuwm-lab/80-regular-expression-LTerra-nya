@@ -5,17 +5,19 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("");
+        Console.WriteLine("Input string");
         string input = Console.ReadLine();
+        //dd/mm/yyyy or dd-mm-yyyy
         string pattern = @"\d{2}[-/]\d{2}[-/]\d{4}";
-
-        // Check if the word "match" is in the input string
         if (Regex.IsMatch(input, pattern)) {
             MatchCollection matches = Regex.Matches(input, pattern);
             foreach (Match match in matches)
             {
-                Console.WriteLine(match); // Output: Extracted URL
+                Console.WriteLine(match); // Output: dd/mm/yyyy or dd-mm-yyyy
             }
+        }
+        else{
+            Console.WriteLine("No matches found.");
         }
     }
 }
