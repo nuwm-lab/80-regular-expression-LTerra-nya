@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Text.RegularExpressions;
 
 class MainClass
@@ -9,7 +9,6 @@ class MainClass
         string input = Console.ReadLine();
         //dd/mm/yyyy or dd-mm-yyyy
         string pattern = @"\d{2}[-/]\d{2}[-/]\d{4}";
-
         if (Regex.IsMatch(input, pattern)) {
             MatchCollection matches = Regex.Matches(input, pattern);
             foreach (Match match in matches)
