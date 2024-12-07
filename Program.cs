@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
-namespace LabWork
+class MainClass
 {
-    // Даний проект є шаблоном для виконання лабораторних робіт
-    // з курсу "Об'єктно-орієнтоване програмування та патерни проектування"
-    // Необхідно змінювати і дописувати код лише в цьому проекті
-    // Відео-інструкції щодо роботи з github можна переглянути 
-    // за посиланням https://www.youtube.com/@ViktorZhukovskyy/videos 
-    class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            
-            Console.WriteLine("Hello World!");
+        Console.WriteLine("");
+        string input = Console.ReadLine();
+        string pattern = @"\d{2}[-/]\d{2}[-/]\d{4}";
+
+        // Check if the word "match" is in the input string
+        if (Regex.IsMatch(input, pattern)) {
+            MatchCollection matches = Regex.Matches(input, pattern);
+            foreach (Match match in matches)
+            {
+                Console.WriteLine(match); // Output: Extracted URL
+            }
         }
     }
 }
